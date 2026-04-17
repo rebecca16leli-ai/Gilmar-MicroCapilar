@@ -28,6 +28,7 @@
     ::-webkit-scrollbar-track { background: var(--dark); }
     ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
 
+    /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
@@ -44,6 +45,7 @@
     .nav-cta { background: var(--gold) !important; color: var(--black) !important; padding: .55rem 1.4rem; border-radius: 2px; font-weight: 500; letter-spacing: .1em; }
     .nav-cta:hover { background: var(--gold2) !important; }
 
+    /* WHATSAPP FAB */
     #btn-whats {
       position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
       width: 56px; height: 56px; background: #25d366; color: #fff;
@@ -54,6 +56,7 @@
     }
     #btn-whats:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,.5); }
 
+    /* HERO */
     #home {
       min-height: 100vh; display: flex; flex-direction: column;
       justify-content: flex-end; align-items: flex-start;
@@ -80,6 +83,7 @@
     .scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, var(--gold), transparent); animation: scrollLine 2s ease-in-out infinite; }
     @keyframes scrollLine { 0%,100%{opacity:1;transform:scaleY(1)} 50%{opacity:.4;transform:scaleY(.6)} }
 
+    /* ABOUT */
     #about { padding: 8rem 4rem; background: var(--dark); }
     .about-inner { max-width: 1100px; margin: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
     .section-label { font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: .8rem; }
@@ -100,16 +104,44 @@
     .stat-num { font-family: var(--font-display); font-size: 2.5rem; color: var(--gold); font-weight: 900; }
     .stat-label { color: var(--gray); font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; }
 
+    /* WORKS — antes e depois */
     #jobs { padding: 8rem 4rem; background: var(--black); }
     .jobs-header { max-width: 1100px; margin: 0 auto 4rem; }
-    .gallery { max-width: 1100px; margin: auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-    .gallery-item { overflow: hidden; border-radius: 3px; position: relative; background: var(--card); }
-    .gallery-item img { width: 100%; height: 420px; object-fit: cover; display: block; transition: transform .5s ease; }
-    .gallery-item:hover img { transform: scale(1.04); }
-    .gallery-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.6) 0%, transparent 50%); opacity: 0; transition: opacity .3s; display: flex; align-items: flex-end; padding: 1.2rem; }
-    .gallery-item:hover .gallery-overlay { opacity: 1; }
-    .gallery-overlay span { color: var(--gold); font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; }
+    .portfolio-grid {
+      max-width: 1100px; margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .portfolio-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+      transition: border-color .3s, transform .3s;
+    }
+    .portfolio-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+    .portfolio-card img {
+      width: 100%; height: 360px;
+      object-fit: cover; display: block;
+      transition: transform .5s ease;
+    }
+    .portfolio-card:hover img { transform: scale(1.03); }
+    .portfolio-label {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 1.2rem 1.5rem;
+      background: linear-gradient(to top, rgba(0,0,0,.85) 0%, transparent 100%);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .portfolio-label span { color: var(--gold); font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 500; }
+    .portfolio-label .badge-ad {
+      background: var(--gold); color: var(--black);
+      font-size: .65rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; padding: .2rem .6rem; border-radius: 2px;
+    }
 
+    /* TÉCNICA */
     #tecnica { padding: 8rem 4rem; background: var(--dark); }
     .tecnica-inner { max-width: 1100px; margin: auto; }
     .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 4rem; }
@@ -120,6 +152,7 @@
     .step-title { font-size: 1rem; font-weight: 500; margin-bottom: .5rem; }
     .step-desc { color: var(--gray); font-size: .9rem; line-height: 1.6; }
 
+    /* LOCAL */
     #local { padding: 8rem 4rem; background: var(--black); }
     .local-inner { max-width: 1100px; margin: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
     .hours-table { width: 100%; border-collapse: collapse; margin-top: 2rem; }
@@ -136,6 +169,7 @@
     .address-row a { color: #aaa; text-decoration: none; }
     .address-row a:hover { color: var(--gold); }
 
+    /* CONTACT */
     #contato { padding: 8rem 4rem; background: var(--dark); }
     .contact-inner { max-width: 1100px; margin: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
     .contact-form { display: flex; flex-direction: column; gap: 1rem; }
@@ -152,6 +186,7 @@
     .channel-label { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gray); }
     .channel-value { font-size: .95rem; }
 
+    /* FOOTER */
     footer { background: var(--black); border-top: 1px solid var(--border); padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
     .footer-brand { font-family: var(--font-display); font-size: 1.2rem; color: var(--gold); display: flex; align-items: center; gap: .8rem; }
     .footer-logo { height: 52px; width: 52px; object-fit: cover; border-radius: 50%; border: 2px solid var(--gold); }
@@ -172,8 +207,8 @@
       .about-inner, .local-inner, .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
       footer { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
       .hero-scroll { display: none; }
-      .gallery { grid-template-columns: 1fr; }
-      .gallery-item img { height: 300px; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .portfolio-card img { height: 260px; }
     }
   </style>
 </head>
@@ -194,6 +229,7 @@
     <i class="bi bi-whatsapp"></i>
   </a>
 
+  <!-- HERO -->
   <section id="home">
     <div class="hero-bg"></div>
     <div class="hero-grain"></div>
@@ -209,6 +245,7 @@
     <div class="hero-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
   </section>
 
+  <!-- ABOUT -->
   <section id="about">
     <div class="about-inner">
       <div class="reveal">
@@ -241,24 +278,46 @@
     </div>
   </section>
 
+  <!-- PORTFÓLIO ANTES E DEPOIS -->
   <section id="jobs">
     <div class="jobs-header reveal">
       <div class="section-label">Portfólio</div>
-      <h2 class="section-title">Trabalhos <span style="color:var(--gold)">Realizados</span></h2>
-      <p style="color:var(--gray);max-width:500px;margin-top:.8rem;line-height:1.7">Resultados reais de procedimentos de micropigmentação de barba — preenchimento de falhas, contorno e densidade total.</p>
+      <h2 class="section-title">Antes <span style="color:var(--gold)">e Depois</span></h2>
+      <p style="color:var(--gray);max-width:520px;margin-top:.8rem;line-height:1.7">Resultados reais de micropigmentação de barba — veja a transformação de perto, com a técnica Scalpine exclusiva.</p>
     </div>
-    <div class="gallery">
-      <div class="gallery-item reveal">
-        <img src="https://i.ibb.co/pgGRdMf/8-F6446-A5-ACC1-44-A4-94-E3-44-C36-D1-A6-F6-B.jpg" alt="Resultado 1">
-        <div class="gallery-overlay"><span>Densidade Capilar</span></div>
+    <div class="portfolio-grid">
+      <div class="portfolio-card reveal">
+        <img src="https://i.ibb.co/jx3PQR7q/foto-antes-depois-1.jpg" alt="Antes e depois micropigmentação barba 1" onerror="this.src='https://i.ibb.co/pgGRdMf/8-F6446-A5-ACC1-44-A4-94-E3-44-C36-D1-A6-F6-B.jpg'">
+        <div class="portfolio-label">
+          <span>Resultado 01</span>
+          <span class="badge-ad">Antes e Depois</span>
+        </div>
       </div>
-      <div class="gallery-item reveal">
-        <img src="https://i.ibb.co/rGt9hBNy/foto-10.jpg" alt="Resultado 2">
-        <div class="gallery-overlay"><span>Efeito Natural</span></div>
+      <div class="portfolio-card reveal">
+        <img src="https://i.ibb.co/nqXwCHDQ/foto-antes-depois-2.jpg" alt="Antes e depois micropigmentação barba 2" onerror="this.src='https://i.ibb.co/rGt9hBNy/foto-10.jpg'">
+        <div class="portfolio-label">
+          <span>Resultado 02</span>
+          <span class="badge-ad">Antes e Depois</span>
+        </div>
+      </div>
+      <div class="portfolio-card reveal">
+        <img src="https://i.ibb.co/pspS8hnH/foto-antes-depois-3.jpg" alt="Antes e depois micropigmentação barba 3" onerror="this.src='https://i.ibb.co/Q3RTS8fr/foto-1-1.jpg'">
+        <div class="portfolio-label">
+          <span>Resultado 03</span>
+          <span class="badge-ad">Antes e Depois</span>
+        </div>
+      </div>
+      <div class="portfolio-card reveal">
+        <img src="https://i.ibb.co/1fQjnnTb/foto-antes-depois-4.jpg" alt="Antes e depois micropigmentação barba 4" onerror="this.src='https://i.ibb.co/kVCqQhh7/foto-3-1.jpg'">
+        <div class="portfolio-label">
+          <span>Resultado 04</span>
+          <span class="badge-ad">Antes e Depois</span>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- TÉCNICA -->
   <section id="tecnica">
     <div class="tecnica-inner">
       <div class="reveal">
@@ -284,29 +343,30 @@
         </div>
         <div class="step reveal">
           <div class="step-num">04</div>
-          <div class="step-title">Pós-Procedimento</div>
-          <div class="step-desc">Cuidados pós-aplicação, cicatrização acompanhada e sessão de retoque incluída no pacote.</div>
+          <div class="step-title">Pos-Procedimento</div>
+          <div class="step-desc">Cuidados pos-aplicacao, cicatrizacao acompanhada e sessao de retoque incluida no pacote.</div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- LOCAL -->
   <section id="local">
     <div class="local-inner">
       <div class="reveal">
         <div class="section-label">Onde estamos</div>
-        <h2 class="section-title">Localização e <span style="color:var(--gold)">Horários</span></h2>
+        <h2 class="section-title">Localizacao e <span style="color:var(--gold)">Horarios</span></h2>
         <table class="hours-table">
-          <tr><td>Segunda-feira</td><td><span class="badge-open">● Aberto</span>&nbsp;08:00 – 22:00</td></tr>
-          <tr><td>Terça-feira</td><td><span class="badge-open">● Aberto</span>&nbsp;08:00 – 22:00</td></tr>
-          <tr><td>Quarta-feira</td><td><span class="badge-open">● Aberto</span>&nbsp;08:00 – 22:00</td></tr>
-          <tr><td>Quinta-feira</td><td><span class="badge-open">● Aberto</span>&nbsp;08:00 – 22:00</td></tr>
-          <tr><td>Sexta-feira</td><td><span class="badge-open">● Aberto</span>&nbsp;08:00 – 22:00</td></tr>
-          <tr><td>Sábado</td><td><span class="badge-open">● Aberto</span>&nbsp;08:00 – 22:00</td></tr>
+          <tr><td>Segunda-feira</td><td><span class="badge-open">● Aberto</span>&nbsp;08:00 - 22:00</td></tr>
+          <tr><td>Terca-feira</td><td><span class="badge-open">● Aberto</span>&nbsp;08:00 - 22:00</td></tr>
+          <tr><td>Quarta-feira</td><td><span class="badge-open">● Aberto</span>&nbsp;08:00 - 22:00</td></tr>
+          <tr><td>Quinta-feira</td><td><span class="badge-open">● Aberto</span>&nbsp;08:00 - 22:00</td></tr>
+          <tr><td>Sexta-feira</td><td><span class="badge-open">● Aberto</span>&nbsp;08:00 - 22:00</td></tr>
+          <tr><td>Sabado</td><td><span class="badge-open">● Aberto</span>&nbsp;08:00 - 22:00</td></tr>
           <tr><td>Domingo</td><td><span class="badge-closed">● Fechado</span></td></tr>
         </table>
         <div class="address-box">
-          <div class="address-row"><i class="bi bi-geo-alt-fill"></i><a href="https://maps.app.goo.gl/fB66RezDfyN6r78g6" target="_blank">4ª Av., 560 – Sala 205, Centro, Balneário Camboriú – SC, 88330-287</a></div>
+          <div class="address-row"><i class="bi bi-geo-alt-fill"></i><a href="https://maps.app.goo.gl/fB66RezDfyN6r78g6" target="_blank">4a Av., 560 - Sala 205, Centro, Balneario Camboriu - SC, 88330-287</a></div>
           <div class="address-row"><i class="bi bi-telephone-fill"></i><a href="https://api.whatsapp.com/send/?phone=5543988733983" target="_blank">(43) 98873-3983</a></div>
           <div class="address-row"><i class="bi bi-instagram"></i><a href="https://www.instagram.com/gil_microcapilar/" target="_blank">@gil_microcapilar</a></div>
         </div>
@@ -324,18 +384,19 @@
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section id="contato">
     <div class="contact-inner">
       <div class="reveal">
-        <div class="section-label">Agende seu horário</div>
+        <div class="section-label">Agende seu horario</div>
         <h2 class="section-title">Entre em <span style="color:var(--gold)">Contato</span></h2>
-        <p style="color:var(--gray);margin-top:.8rem;margin-bottom:2rem;line-height:1.7">Preencha o formulário e entraremos em contato pelo WhatsApp. Seus dados são protegidos pela LGPD n° 13.709/2018.</p>
+        <p style="color:var(--gray);margin-top:.8rem;margin-bottom:2rem;line-height:1.7">Preencha o formulario e entraremos em contato pelo WhatsApp. Seus dados sao protegidos pela LGPD n 13.709/2018.</p>
         <div class="contact-form">
-          <div class="form-group"><label>Seu nome</label><input type="text" placeholder="Ex: João Silva" autocomplete="name"></div>
+          <div class="form-group"><label>Seu nome</label><input type="text" placeholder="Ex: Joao Silva" autocomplete="name"></div>
           <div class="form-group"><label>WhatsApp</label><input type="tel" placeholder="(47) 99999-9999" autocomplete="tel"></div>
           <div class="form-group"><label>E-mail</label><input type="email" placeholder="seu@email.com" autocomplete="email"></div>
-          <div class="form-group"><label>Mensagem (opcional)</label><textarea placeholder="Descreva o que deseja, dúvidas, etc."></textarea></div>
-          <p class="form-note">🔒 Dados confidenciais e protegidos por lei.</p>
+          <div class="form-group"><label>Mensagem (opcional)</label><textarea placeholder="Descreva o que deseja, duvidas, etc."></textarea></div>
+          <p class="form-note">Dados confidenciais e protegidos por lei.</p>
           <button class="btn-gold" type="button">Enviar e Agendar</button>
         </div>
       </div>
@@ -358,26 +419,27 @@
           </a>
           <a class="channel" href="https://maps.app.goo.gl/fB66RezDfyN6r78g6" target="_blank">
             <span class="channel-icon"><i class="bi bi-geo-alt-fill"></i></span>
-            <div><div class="channel-label">Endereço</div><div class="channel-value">4ª Av., 560 – Sala 205, Balneário Camboriú – SC</div></div>
+            <div><div class="channel-label">Endereco</div><div class="channel-value">4a Av., 560 - Sala 205, Balneario Camboriu - SC</div></div>
           </a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <div class="footer-brand">
       <img class="footer-logo" src="https://i.ibb.co/Ldzfj7LQ/foto-7-1.png" alt="Logo Gil Microcapilar">
       Gil Microcapilar
     </div>
     <div class="footer-links">
-      <a href="#home">Início</a>
+      <a href="#home">Inicio</a>
       <a href="#about">Sobre</a>
       <a href="#jobs">Trabalhos</a>
-      <a href="#local">Localização</a>
+      <a href="#local">Localizacao</a>
       <a href="#contato">Contato</a>
     </div>
-    <div class="footer-copy">© 2025 Gil Microcapilar. Todos os direitos reservados.</div>
+    <div class="footer-copy">2025 Gil Microcapilar. Todos os direitos reservados.</div>
   </footer>
 
   <script>
